@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="form.css">
+
+    <title>FORM </title> 
+</head>
+<body>
+    <form method="post" action="hasiltugas3.php"></form>
+    <div class="container">
+        <header>FORM</header>
+
+        <form action="#"><div class="form first">
+            <div class="details personal">
+
+                <div class="fields">
+                    <div class="input-field">
+                        <label>Nama</label>
+                        <input type="text" name="nama" placeholder="Masukan Nama" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Tanggal Lahir</label>
+                        <input type="date" name="tgl" placeholder="Masukan Tanggal" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Email</label>
+                        <input type="text" name="email" placeholder="Masukan Email" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>NIM</label>
+                        <input type="number" name="nim" placeholder="Masukan NIM" required>
+                    </div>
+
+                    
+                    <div class="input-field">
+                        <label>Deskripsi</label>
+                        <textarea name="deskripsi" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Identity Details</span>
+
+                    <div class="kelamin-field">
+                        <label>Jenis Kelamin :</label>
+                        <input type="radio" id="he"/>
+                        <label for="he">Laki-Laki</label>
+
+                        <input type="radio" id="she"/>
+                        <label for="she">Perempuan</label>
+
+                        <input type="radio" id="oth"/>
+                        <label for="oth">Lainnya</label>
+                        <br><br>
+
+                        <label>Hobi :</label>
+                        <input type="checkbox" id="1"/>
+                        <label for="1">Hobi1</label>
+
+                        <input type="checkbox" id="2"/>
+                        <label for="2">Hobi2</label>
+
+                        <input type="checkbox" id="3"/>
+                        <label for="3">Hobi3</label>
+                    </div>
+
+                    <button class="nextBtn">
+                        <span class="btnText">Submit</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                    <h2><a href="index.html">BACK</a></h2>
+                </div> 
+            </div>
+        </form>
+    </div>
+
+    <!--<script src="form.js"></script>-->
+</body>
+</html>
