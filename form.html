@@ -1,86 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tugas3</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
   
-    <!----======== CSS ======== -->
-    <link rel="stylesheet" href="form.css">
 
-    <title>FORM </title> 
+    h1{
+      margin-bottom: 10px;
+    }
+
+    #nameErr,#nimErr,
+    #emailErr,#dateErr,
+    #genderErr,#hobiErr,
+    #descErr{
+      color: red;
+    }
+
+    body{
+      width: 100%;
+      height: 100vh;
+      background-color: aqua;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container-tugas3{
+      width: fit-content;
+      background-color: white;
+      padding: 2rem 4rem;
+      border-radius: 30px;
+      
+    }
+
+    
+    input[type=text],
+    input[type=email],
+    input[type=date]{
+      width: 100%;
+      display: block;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid black;
+      padding-left: 5px;
+    }
+    textarea{
+      display: block;
+      outline: none;
+    }
+
+    .name,.nim,
+    .email,.date,
+    .gender,.hobi,
+    .desc{
+      margin-bottom: 10px;
+    }
+
+    #submit{
+      border:none;
+      background-color: purple;
+      border-radius: 10px;
+      padding: 10px 30px;
+      color: white;
+    }
+  </style>
 </head>
-<body>
-    <form method="post" action="hasiltugas3.php"></form>
-    <div class="container">
-        <header>FORM</header>
+<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
 
-        <form action="#"><div class="form first">
-            <div class="details personal">
-
-                <div class="fields">
-                    <div class="input-field">
-                        <label>Nama</label>
-                        <input type="text" name="nama" placeholder="Masukan Nama" required>
-                    </div>
-
-                    <div class="input-field">
-                        <label>Tanggal Lahir</label>
-                        <input type="date" name="tgl" placeholder="Masukan Tanggal" required>
-                    </div>
-
-                    <div class="input-field">
-                        <label>Email</label>
-                        <input type="text" name="email" placeholder="Masukan Email" required>
-                    </div>
-
-                    <div class="input-field">
-                        <label>NIM</label>
-                        <input type="number" name="nim" placeholder="Masukan NIM" required>
-                    </div>
-
-                    
-                    <div class="input-field">
-                        <label>Deskripsi</label>
-                        <textarea name="deskripsi" id="" cols="30" rows="10"></textarea>
-                    </div>
-                    
-                    </div>
-                </div>
-
-                <div class="details ID">
-                    <span class="title">Identity Details</span>
-
-                    <div class="kelamin-field">
-                        <label>Jenis Kelamin :</label>
-                        <input type="radio" id="he"/>
-                        <label for="he">Laki-Laki</label>
-
-                        <input type="radio" id="she"/>
-                        <label for="she">Perempuan</label>
-
-                        <input type="radio" id="oth"/>
-                        <label for="oth">Lainnya</label>
-                        <br><br>
-
-                        <label>Hobi :</label>
-                        <input type="checkbox" id="1"/>
-                        <label for="1">Hobi1</label>
-
-                        <input type="checkbox" id="2"/>
-                        <label for="2">Hobi2</label>
-
-                        <input type="checkbox" id="3"/>
-                        <label for="3">Hobi3</label>
-                    </div>
-
-                    <button class="nextBtn">
-                        <span class="btnText">Submit</span>
-                        <i class="uil uil-navigator"></i>
-                    </button>
-                    <h2><a href="index.html">BACK</a></h2>
-                </div> 
+<?php
+  // if(isset($_GET["name"])){
+  //    $nameErr = "Name kosong!";
+  // }else if(isset($_GET["nim"])){
+  //   $nimErr = "nim kosong!";
+  // }else if(isset($_GET["email"])){
+  //   $emailErr = "email kosong!";
+  // }else if(isset($_GET["date"])){
+  //   $dateErr = "date kosong!";
+  // }else if(isset($_GET["gender"])){
+  //   $genderErr = "gender kosong!";
+  // }else if(isset($_GET["hobi"])){
+  //   $hobiErr = "hobi kosong!";
+  // }else if(isset($_GET["desc"])){
+  //   $descErr = "desc kosong!";
+  // };
+?>
+  <div class="container-tugas3">
+    <h1>Form</h1>
+    <form action="hasil.php" method="post">
+        <div class="name">
+            <label for="name">Name</label>
+            <span id="nameErr">*</span>
+            <input type="text" name="name" id='name'>
+        </div>
+        <div class="nim">
+            <label for="nim">Nim</label>
+            <span id="nimErr">*</span> 
+            <input type="text" name="nim" id='nim'>
+        </div>
+        <div class="email">
+            <label for="email">Email</label>
+            <span id="emailErr">*</span>
+            <input type="email" name="email" id='email'>
+        </div>
+        <div class="date">
+            <label for="date">Tanggal Lahir</label>
+            <span id="dateErr">*</span>
+            <input type="date" name="date" id='date'>
+        </div>
+        <div class="gender">
+          <label for="gender">Jenis Kelamin</label>
+          <span id="genderErr">*</span>
+          <div class="gender-item">
+              <input type="radio"  name="gender" value="female">Female
+              <input type="radio"  name="gender" value="male">Male
             </div>
-        </form>
-    </div>
+        </div>
+        <div class="hobi">
+            <label for="hobi">Hobi</label>
+            <span id="hobiErr">*</span>
+            <div id="hobi-item">
+              <input type="checkbox" name="hobi" value="Baca Buku">Baca Buku
+              <input type="checkbox" name="hobi" value="Olahraga">Olahraga
+              <input type="checkbox" name="hobi" value="Seni">Seni
+            </div>
+        </div>
+        <div class="desc">
+            <label for="desc">Deskripsi</label>
+            <span id="descErr">*</span>  
+            <textarea name="desc" rows="5" cols="40" id="desc"></textarea>
+        </div>
+    
+      <input type="submit" name="submit" value="Submit" id="submit"> 
+    </form>
+    
 
-    <!--<script src="form.js"></script>-->
+  </div>
+
+
+    <script>
+      $("#submit").click(function(){
+        if($('#name').val().length === 0) $("#nameErr").text("*Name is required!");
+        if($('#nim').val().length === 0) $("#nimErr").text("*Nim is required!"); 
+        if($('#email').val().length === 0) $("#emailErr").text("*Email is required!");
+        if($('#date').val().length === 0) $("#dateErr").text("*Date is required!");
+        if($('#desc').val().length === 0) $("#descErr").text("*Deskripsi is required!");
+        if (!$("input[name='hobi']:checked"). val()) $("#hobiErr").text("*Hobi is required");
+        if (!$("input[name='gender']:checked"). val()) $("#genderErr").text("*Gender is required"); 
+
+        if($('#name').val().length !== 0 && $('#nim').val().length !== 0 && 
+          $('#email').val().length !== 0 && $('#date').val().length !== 0 && 
+          $('#desc').val().length !== 0 && $("input[name='hobi']:checked"). val() && 
+          $("input[name='gender']:checked"). val()) return true;
+        else return false;
+     });
+    </script>
+  
 </body>
 </html>
