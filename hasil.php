@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasil Tugas 3</title>
+    <title>Biann</title>
     <style>
         *{
             margin: 0;
@@ -45,7 +45,7 @@
         }
     </style>
 </head>
-<body>
+<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
 
     <div class="container-hasiltugas3">
         <h1>Your Input</h1>
